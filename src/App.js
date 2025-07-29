@@ -1,25 +1,83 @@
-import logo from './logo.svg';
+// App.js
+import React from 'react';
+import { PageProvider } from './context/PageContext';
+import { AuthProvider } from './context/AuthContext';
 import './App.css';
+import './tailwind.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import InnerApp from './InnerApp'; // ✅ We'll move the logic to this component
+
+const App = () => (
+  <PageProvider>
+    <AuthProvider>
+      <InnerApp />
+    </AuthProvider>
+  </PageProvider>
+);
 
 export default App;
+
+
+
+
+
+
+
+
+// import React, { createContext, useContext, useState, useEffect } from 'react';
+// import { PageProvider } from './context/PageContext';
+// import { AuthProvider } from './context/AuthContext';
+// import './App.css';
+// import './tailwind.css';
+
+
+
+// const App = () => {
+//   const { currentPage } = usePage();
+
+//   const renderPage = () => {
+//     switch (currentPage) {
+//       case 'home':
+//         return <HomePage />;
+//       case 'login':
+//         return <LoginPage />;
+//       case 'dashboard':
+//         return <DashboardPage />;
+//       case 'viewProfile':
+//         return <ViewProfilePage />;
+//       case 'editProfile':
+//         return <EditProfilePage />;
+//       default:
+//         return <HomePage />;
+//     }
+//   };
+
+//   return (
+//     <div className="font-sans antialiased">
+//       <style>
+//         {`
+//           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+//           body { font-family: 'Inter', sans-serif; }
+//           .animate-underline {
+//             animation: expandUnderline 0.3s forwards;
+//           }
+//           @keyframes expandUnderline {
+//             from { transform: scaleX(0); }
+//             to { transform: scaleX(1); }
+//           }
+//         `}
+//       </style>
+//       <Navbar />
+//       {renderPage()}
+//     </div>
+//   );
+// };
+
+// // Wrap App with providers
+// export default () => (
+//   <PageProvider>
+//     <AuthProvider>
+//       <App />
+//     </AuthProvider>
+//   </PageProvider>
+// );
