@@ -1,3 +1,5 @@
+import { usePage } from '../context/PageContext';
+
 const NavLink = ({ to, children }) => {
   const { currentPage, setCurrentPage } = usePage();
   const isActive = currentPage === to;
@@ -15,3 +17,5 @@ const NavLink = ({ to, children }) => {
     </button>
   );
 };
+
+export default NavLink

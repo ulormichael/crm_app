@@ -1,13 +1,27 @@
+import { useEffect } from 'react';
+import { usePage } from '../context/PageContext';
+import Button from '../components/Button';
+
 const ViewProfilePage = () => {
   const { selectedItem, setCurrentPage, setSelectedItem } = usePage();
 
-  if (!selectedItem) {
-    // If no item is selected, redirect back to dashboard
-    useEffect(() => {
-      setCurrentPage('dashboard');
-    }, [setCurrentPage]);
-    return null;
-  }
+  // if (!selectedItem) {
+  //   // If no item is selected, redirect back to dashboard
+  //   useEffect(() => {
+  //     setCurrentPage('dashboard');
+  //   }, [setCurrentPage]);
+  //   return null;
+  // }
+      useEffect(() => {
+      if (!selectedItem) {
+        setCurrentPage('dashboard');
+      }
+    }, [selectedItem, setCurrentPage]);
+
+    if (!selectedItem) {
+      return null;
+    }
+  
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">

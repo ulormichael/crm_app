@@ -1,3 +1,6 @@
+import { usePage } from '../context/PageContext';
+import Button from '../components/Button';
+
 const HomePage = () => {
   const { setCurrentPage } = usePage(); // Call usePage hook here
 

@@ -1,6 +1,6 @@
 // InnerApp.js
 // import React from 'react';
-// import { usePage } from './context/PageContext';
+import { usePage } from './context/PageContext';
 import Navbar from './components/Navbar';
 
 import HomePage from './pages/HomePage';

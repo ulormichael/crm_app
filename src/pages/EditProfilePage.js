@@ -1,3 +1,7 @@
+import { useState, useEffect } from 'react';
+import Button from '../components/Button';
+import { usePage } from '../context/PageContext';
+
 const EditProfilePage = () => {
   const { selectedItem, setCurrentPage, setSelectedItem, updateCrmData } = usePage();
   const [formData, setFormData] = useState(selectedItem || {});

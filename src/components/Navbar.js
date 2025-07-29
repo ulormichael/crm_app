@@ -1,3 +1,6 @@
+import { useAuth } from '../context/AuthContext';
+import NavLink from './NavLink'
+
 const Navbar = () => {
   const { user, logout } = useAuth();
 

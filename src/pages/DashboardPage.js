@@ -1,3 +1,7 @@
+import { useEffect } from 'react';
+import { usePage } from '../context/PageContext';
+import { useAuth } from '../context/AuthContext';
+import MetricCard from '../components/MetricCard'
 const DashboardPage = () => {
   const { user } = useAuth();
   const { setCurrentPage, setSelectedItem, crmData, setCrmData } = usePage(); // Get crmData and setCrmData from PageContext
